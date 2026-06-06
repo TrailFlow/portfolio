@@ -1,0 +1,152 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --color-brand-400: #fbbf24;
+  --color-brand-500: #f59e0b;
+  --color-brand-600: #d97706;
+  --color-accent-400: #60a5fa;
+  --color-accent-500: #3b82f6;
+  --color-accent-600: #2563eb;
+  --color-surface: #0a1628;
+  --color-surface-elevated: #0f2347;
+  --color-surface-border: #1e3a5f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-surface);
+  color: #e2e8f0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-up { transform: translateY(36px); }
+.reveal-left { transform: translateX(-36px); }
+.reveal-right { transform: translateX(36px); }
+.reveal-scale { transform: scale(0.96); }
+.reveal-visible { opacity: 1; transform: translate(0, 0) scale(1); }
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-enter {
+  animation: fade-in-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+.hero-enter-1 { animation-delay: 0.05s; }
+.hero-enter-2 { animation-delay: 0.15s; }
+.hero-enter-3 { animation-delay: 0.25s; }
+.hero-enter-4 { animation-delay: 0.35s; }
+.hero-enter-5 { animation-delay: 0.45s; }
+.hero-enter-6 { animation-delay: 0.55s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.animate-float { animation: float 5s ease-in-out infinite; }
+
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float-delayed { animation: float-delayed 6s ease-in-out 1s infinite; }
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 24px rgba(245, 158, 11, 0.15), 0 0 48px rgba(59, 130, 246, 0.08); }
+  50% { box-shadow: 0 0 36px rgba(245, 158, 11, 0.35), 0 0 64px rgba(59, 130, 246, 0.15); }
+}
+.animate-glow-pulse { animation: glow-pulse 3.5s ease-in-out infinite; }
+
+@keyframes shimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+.shimmer-gold {
+  background: linear-gradient(90deg, #d97706, #fcd34d, #fef3c7, #f59e0b, #d97706);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 5s linear infinite;
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-rotate-slow { animation: rotate-slow 25s linear infinite; }
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+.logo-pulse::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  animation: pulse-ring 2.5s ease-out infinite;
+}
+
+.premium-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.4s ease;
+}
+.premium-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(96, 165, 250, 0.15);
+}
+
+@keyframes border-spin { to { --angle: 360deg; } }
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+.gradient-border {
+  background:
+    linear-gradient(var(--color-surface-elevated), var(--color-surface-elevated)) padding-box,
+    conic-gradient(from var(--angle), #2563eb, #f59e0b, #60a5fa, #2563eb) border-box;
+  border: 2px solid transparent;
+  animation: border-spin 4s linear infinite;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(59, 130, 246, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.btn-shine { position: relative; overflow: hidden; }
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.5s ease;
+}
+.btn-shine:hover::after { left: 120%; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .hero-enter, .animate-float, .animate-float-delayed, .animate-glow-pulse,
+  .shimmer-gold, .animate-rotate-slow, .gradient-border, .logo-pulse::after { animation: none; }
+  .premium-card:hover { transform: none; }
+}

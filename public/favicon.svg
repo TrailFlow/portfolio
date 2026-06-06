@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="tf-gold" x1="24" y1="4" x2="24" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fcd34d"/>
+      <stop offset="1" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="tf-blue" x1="4" y1="44" x2="44" y2="4" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="tf-ring" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1e40af" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#3b82f6" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+  <circle cx="24" cy="24" r="22" stroke="url(#tf-ring)" stroke-width="1.5" fill="#0a1628"/>
+  <circle cx="24" cy="24" r="19" stroke="#1e3a5f" stroke-width="0.75" fill="none" opacity="0.8"/>
+  <path d="M8 32 C14 22, 18 18, 24 20 C30 22, 34 16, 40 12" stroke="url(#tf-blue)" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.85"/>
+  <path d="M10 36 C16 28, 20 26, 26 28 C32 30, 36 24, 42 18" stroke="url(#tf-blue)" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.45"/>
+  <circle cx="14" cy="26" r="1.5" fill="#60a5fa" opacity="0.7"/>
+  <circle cx="24" cy="20" r="1.5" fill="#93c5fd"/>
+  <circle cx="34" cy="17" r="1.5" fill="#60a5fa" opacity="0.7"/>
+  <path d="M24 10 L26.5 24 L24 22 L21.5 24 Z" fill="url(#tf-gold)"/>
+  <path d="M24 38 L21.5 24 L24 26 L26.5 24 Z" fill="#1e3a5f"/>
+  <path d="M10 24 L24 21.5 L24 26.5 Z" fill="#334155" opacity="0.9"/>
+  <path d="M38 24 L24 26.5 L24 21.5 Z" fill="#334155" opacity="0.9"/>
+  <line x1="24" y1="5" x2="24" y2="8" stroke="#64748b" stroke-width="1" stroke-linecap="round"/>
+  <line x1="24" y1="40" x2="24" y2="43" stroke="#64748b" stroke-width="1" stroke-linecap="round"/>
+  <line x1="5" y1="24" x2="8" y2="24" stroke="#64748b" stroke-width="1" stroke-linecap="round"/>
+  <line x1="40" y1="24" x2="43" y2="24" stroke="#64748b" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="24" cy="24" r="3" fill="#0a1628" stroke="url(#tf-gold)" stroke-width="1.5"/>
+  <circle cx="24" cy="24" r="1" fill="#fbbf24"/>
+</svg>
