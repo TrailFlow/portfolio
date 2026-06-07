@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import type { FormEvent } from 'react'
 import { navLinks } from '../data/content'
 import { Logo } from './Logo'
 
