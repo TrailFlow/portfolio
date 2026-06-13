@@ -1,6 +1,6 @@
-# Trailflow — Business Portfolio
+# TRAIL FLOW — Business Portfolio
 
-A single-page business portfolio for web design and development services.
+Professional website services portfolio for TRAIL FLOW.
 
 ## Run locally
 
@@ -9,27 +9,32 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173).
+## SEO
 
-## Customize
+The site includes:
 
-Edit **`src/data/content.ts`** to update:
+- Meta title, description, keywords, and canonical URL
+- Open Graph & Twitter cards for social sharing
+- `robots.txt` and `sitemap.xml` in `public/`
+- JSON-LD structured data (business, website, FAQ)
 
-- Business name, tagline, email, and phone
-- Services you offer
-- Process steps
-- Portfolio projects and testimonials
+**Update your live URL** in these files when you get a custom domain:
 
-## Deploy
+- `index.html` — canonical, og:url, og:image
+- `public/sitemap.xml`
+- `public/robots.txt`
+- Or set `VITE_SITE_URL=https://yourdomain.com` in a `.env` file
+
+## Deploy (GitHub Pages)
 
 ```bash
 npm run build
 ```
 
-Upload the `dist/` folder to [Vercel](https://vercel.com), [Netlify](https://netlify.com), or any static host.
+Enable Pages in repo settings: branch `main`, folder `/ (root)` or `dist` if using GitHub Actions.
 
-## Next steps
+Live site: [trailflow.github.io/portfolio](https://trailflow.github.io/portfolio)
 
-- Replace placeholder projects with real case studies and screenshots
-- Connect the contact form (e.g. [Formspree](https://formspree.io), Netlify Forms, or your own API)
-- Add your logo and brand colors in `src/index.css` (`@theme`)
+## Customize
+
+Edit `src/data/content.ts` for business info, services, and pricing.

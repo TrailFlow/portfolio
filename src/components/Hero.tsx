@@ -4,7 +4,7 @@ import { LogoMark } from './Logo'
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24">
+    <section id="hero" aria-label="Introduction" className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24">
       <div
         className="pointer-events-none absolute inset-0 opacity-60"
         aria-hidden

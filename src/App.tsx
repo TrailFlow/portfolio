@@ -8,11 +8,13 @@ import { Hero } from './components/Hero'
 import { Included } from './components/Included'
 import { Pricing } from './components/Pricing'
 import { Process } from './components/Process'
+import { SeoSchema } from './components/SeoSchema'
 import { WhyUs } from './components/WhyUs'
 
 function App() {
   return (
     <>
+      <SeoSchema />
       <BackgroundDecor />
       <Header />
       <main>
